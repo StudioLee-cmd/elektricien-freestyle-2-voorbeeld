@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StromSterk Voorbeeld — Elektricien Rotterdam</title>
+  <meta name="description" content="StromSterk Voorbeeld is uw betrouwbare elektricien in Rotterdam. Van groepenkast vervangen tot laadpaal installatie. 24/7 storingsdienst beschikbaar.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+  <!-- Iconify -->
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+  
+  <!-- ======================== BEFORE / AFTER ======================== -->
+  <section class="ba-section" style="height:100vh;position:relative;overflow:hidden;background:#000;">
+    <div style="width:100%;height:100%;position:relative;">
+      <img src="images/craft.jpg" alt="Na" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;">
+      <img src="images/hero.jpg" alt="Voor" id="baBefore" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2;">
+      <div id="baLabel" style="position:absolute;z-index:3;bottom:10%;left:50%;transform:translateX(-50%);text-align:center;opacity:0;">
+        <span style="display:inline-block;background:var(--color-accent,#C1FF72);color:#0a0a0a;padding:8px 20px;border-radius:99px;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;">Scroll om te zien</span>
+        <h2 style="font-size:clamp(2rem,5vw,3.5rem);font-weight:900;line-height:1.15;color:#fff;text-shadow:0 4px 20px rgba(0,0,0,0.6);">Van oud naar <em style="color:var(--color-accent,#C1FF72);">nieuw</em></h2>
+      </div>
+    </div>
+  </section>
+<!-- GSAP + ScrollTrigger -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================
+       1. HEADER — Sticky Glassmorphism
+       ======================================== -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header__inner">
+        <a href="#" class="header__logo">
+          <span class="logo-icon">
+            <iconify-icon icon="lucide:zap"></iconify-icon>
+          </span>
+          StromSterk
+        </a>
+
+        <nav class="header__nav">
+          <a href="#diensten">Diensten</a>
+          <a href="#projecten">Projecten</a>
+          <a href="#over-ons">Over ons</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="header__cta">
+          <a href="tel:+31101234567" class="header__phone">
+            <iconify-icon icon="lucide:phone"></iconify-icon>
+            010 - 123 45 67
+          </a>
+          <a href="#contact" class="btn btn--primary">Offerte aanvragen</a>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu openen">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav__close" id="mobileNavClose" aria-label="Menu sluiten">&times;</button>
+    <a href="#diensten" class="mobile-nav-link">Diensten</a>
+    <a href="#projecten" class="mobile-nav-link">Projecten</a>
+    <a href="#over-ons" class="mobile-nav-link">Over ons</a>
+    <a href="#faq" class="mobile-nav-link">FAQ</a>
+    <a href="#contact" class="mobile-nav-link">Contact</a>
+    <a href="#contact" class="btn btn--primary">Offerte aanvragen</a>
+  </div>
+
+  <!-- ========================================
+       2. HERO
+       ======================================== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__content">
+        <div class="hero__badge">
+          <span class="hero__badge-dot">
+            <iconify-icon icon="lucide:zap"></iconify-icon>
+          </span>
+          Elektricien Rotterdam &amp; omgeving
+        </div>
+
+        <h1>Veilige <span>elektra</span> voor elk project</h1>
+
+        <p class="hero__subtitle">
+          Van storingen tot nieuwbouwinstallaties — StromSterk levert vakkundig elektrotechnisch werk met 24/7 bereikbaarheid en transparante prijzen.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#contact" class="btn btn--primary">
+            <iconify-icon icon="lucide:send"></iconify-icon>
+            Gratis offerte
+          </a>
+          <a href="tel:+31101234567" class="btn btn--outline">
+            <iconify-icon icon="lucide:phone"></iconify-icon>
+            Bel direct
+          </a>
+        </div>
+
+        <div class="hero__stats">
+          <div>
+            <div class="hero__stat-number">15+</div>
+            <div class="hero__stat-label">Jaar ervaring</div>
+          </div>
+          <div>
+            <div class="hero__stat-number">2.400+</div>
+            <div class="hero__stat-label">Projecten afgerond</div>
+          </div>
+          <div>
+            <div class="hero__stat-number">4.9</div>
+            <div class="hero__stat-label">Google rating</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       3. BEFORE/AFTER SCROLL REVEAL
+       ======================================== -->
+  <section class="scroll-video" id="room-reveal">
+    <div class="scroll-video__container">
+      <canvas class="scroll-video__canvas" id="scrollCanvas"></canvas>
+      <div class="scroll-video__overlay" id="scrollOverlay">
+        <span class="scroll-video__tag">Scroll om te zien</span>
+        <h2 class="scroll-video__title">Van donker<br>naar <em>stralend</em></h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       4. SERVICES
+       ======================================== -->
+  <section class="services-section">
+    <div class="container">
+      <div class="services-section__heading fade-up">
+        <span class="label">Onze diensten</span>
+        <h2>Waar kunnen we u mee helpen?</h2>
+        <p>Van kleine reparaties tot complete elektra-installaties. Wij bieden vakkundige oplossingen voor iedere situatie.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-card__icon">
+            <iconify-icon icon="lucide:shield-check"></iconify-icon>
+          </div>
+          <h3>Groepenkast vervangen</h3>
+          <p>Voldoet uw groepenkast niet meer aan de huidige normen? Wij upgraden uw meterkast naar de nieuwste veiligheidseisen.</p>
+          <a href="#contact" class="service-card__link">
+            Meer info <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+          </a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">
+            <iconify-icon icon="lucide:home"></iconify-icon>
+          </div>
+          <h3>Nieuwbouw installatie</h3>
+          <p>Complete elektra-installatie voor uw nieuwbouwproject. Van ontwerp tot oplevering, alles uit een hand.</p>
+          <a href="#contact" class="service-card__link">
+            Meer info <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+          </a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">
+            <iconify-icon icon="lucide:siren"></iconify-icon>
+          </div>
+          <h3>Storingsdienst 24/7</h3>
+          <p>Elektrastoring? Wij zijn dag en nacht bereikbaar. Onze monteurs staan binnen het uur bij u op de stoep.</p>
+          <a href="#contact" class="service-card__link">
+            Meer info <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+          </a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">
+            <iconify-icon icon="lucide:plug-zap"></iconify-icon>
+          </div>
+          <h3>Laadpaal &amp; zonnepanelen</h3>
+          <p>Klaar voor de toekomst? Wij installeren laadpalen en sluiten zonnepanelen vakkundig aan op uw netwerk.</p>
+          <a href="#contact" class="service-card__link">
+            Meer info <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+          </a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">
+            <iconify-icon icon="lucide:lightbulb"></iconify-icon>
+          </div>
+          <h3>Verlichting &amp; domotica</h3>
+          <p>Sfeervolle verlichting of slim wonen? Wij adviseren en installeren de nieuwste verlichtings- en domoticasystemen.</p>
+          <a href="#contact" class="service-card__link">
+            Meer info <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+          </a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">
+            <iconify-icon icon="lucide:clipboard-check"></iconify-icon>
+          </div>
+          <h3>Periodieke keuring</h3>
+          <p>Laat uw elektra-installatie periodiek keuren conform NEN 3140. Voorkom gevaren en voldoe aan wet- en regelgeving.</p>
+          <a href="#contact" class="service-card__link">
+            Meer info <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       5. SCROLL-PIN #2: Before/After Scale
+       ======================================== -->
+  <section class="before-after" id="projecten">
+    <div class="before-after__sticky">
+      <!-- Text that appears during scale -->
+      <div class="before-after__text">
+        <span class="label">Resultaat</span>
+        <h2>Van verouderd naar veilig</h2>
+        <p>Bekijk hoe wij elektra-installaties transformeren tot moderne, veilige systemen die voldoen aan alle normen.</p>
+      </div>
+
+      <!-- Image that scales up -->
+      <div class="before-after__image-wrap">
+        <img src="images/room-after.jpg" alt="Elektra installatie na — moderne verlichting en groepenkast">
+        <div class="before-after__label">
+          <iconify-icon icon="lucide:check-circle"></iconify-icon>
+          Gekeurd &amp; goedgekeurd
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       6. STATS / NUMBERS
+       ======================================== -->
+  <section class="stats" id="over-ons">
+    <div class="container">
+      <div class="stats__heading fade-up">
+        <span class="label" style="color: rgba(0,102,255,0.7);">StromSterk in cijfers</span>
+        <h2>Waarom klanten ons vertrouwen</h2>
+        <p>Al meer dan 15 jaar de betrouwbare elektricien van Rotterdam en omstreken.</p>
+      </div>
+
+      <div class="stats__grid">
+        <div class="stat-item fade-up">
+          <div class="stat-item__number" data-count="2400">0</div>
+          <div class="stat-item__label">Afgeronde projecten</div>
+          <div class="stat-item__divider"></div>
+        </div>
+        <div class="stat-item fade-up">
+          <div class="stat-item__number" data-count="15">0</div>
+          <div class="stat-item__label">Jaar ervaring</div>
+          <div class="stat-item__divider"></div>
+        </div>
+        <div class="stat-item fade-up">
+          <div class="stat-item__number" data-count="30">0</div>
+          <div class="stat-item__label">Minuten responstijd</div>
+          <div class="stat-item__divider"></div>
+        </div>
+        <div class="stat-item fade-up">
+          <div class="stat-item__number" data-count="98">0</div>
+          <div class="stat-item__label">% klanttevredenheid</div>
+          <div class="stat-item__divider"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       7. TESTIMONIAL / QUOTE
+       ======================================== -->
+  <section class="testimonial">
+    <div class="container">
+      <div class="testimonial__inner fade-up">
+        <div class="testimonial__quote-icon">
+          <iconify-icon icon="lucide:quote"></iconify-icon>
+        </div>
+
+        <div class="testimonial__stars">
+          <iconify-icon icon="lucide:star"></iconify-icon>
+          <iconify-icon icon="lucide:star"></iconify-icon>
+          <iconify-icon icon="lucide:star"></iconify-icon>
+          <iconify-icon icon="lucide:star"></iconify-icon>
+          <iconify-icon icon="lucide:star"></iconify-icon>
+        </div>
+
+        <p class="testimonial__text">
+          &ldquo;StromSterk heeft onze volledige elektra-installatie vernieuwd. Professioneel, netjes en binnen de afgesproken tijd. Absolute aanrader!&rdquo;
+        </p>
+
+        <div class="testimonial__author">
+          <img src="images/team.jpg" alt="Klant review" class="testimonial__avatar">
+          <div class="testimonial__info">
+            <div class="testimonial__name">Mark de Vries</div>
+            <div class="testimonial__role">Woningeigenaar, Rotterdam-Zuid</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       8. GALLERY (MASONRY)
+       ======================================== -->
+  <section class="gallery">
+    <div class="container container--wide">
+      <div class="gallery__heading fade-up">
+        <span class="label">Ons werk</span>
+        <h2>Recent afgeronde projecten</h2>
+        <p>Een greep uit onze meest recente opdrachten in Rotterdam en omgeving.</p>
+      </div>
+
+      <div class="gallery__grid">
+        <div class="gallery__item fade-up">
+          <img src="images/craft.jpg" alt="Groepenkast installatie" style="height: 320px; object-fit: cover;">
+          <div class="gallery__item-overlay">
+            <h4>Groepenkast vernieuwing</h4>
+            <p>Woonhuis, Rotterdam-West</p>
+          </div>
+        </div>
+
+        <div class="gallery__item fade-up">
+          <img src="images/kitchen.jpg" alt="Keuken elektra" style="height: 420px; object-fit: cover;">
+          <div class="gallery__item-overlay">
+            <h4>Keuken elektra-installatie</h4>
+            <p>Nieuwbouwwoning, Capelle a/d IJssel</p>
+          </div>
+        </div>
+
+        <div class="gallery__item fade-up">
+          <img src="images/project1.jpg" alt="Kantoor bedrading" style="height: 360px; object-fit: cover;">
+          <div class="gallery__item-overlay">
+            <h4>Kantoorverlichting</h4>
+            <p>Bedrijfspand, Rotterdam-Centrum</p>
+          </div>
+        </div>
+
+        <div class="gallery__item fade-up">
+          <img src="images/about.jpg" alt="Elektricien aan het werk" style="height: 280px; object-fit: cover;">
+          <div class="gallery__item-overlay">
+            <h4>Complete renovatie</h4>
+            <p>Bovenwoning, Schiedam</p>
+          </div>
+        </div>
+
+        <div class="gallery__item fade-up">
+          <img src="images/project2.jpg" alt="Zonnepanelen installatie" style="height: 380px; object-fit: cover;">
+          <div class="gallery__item-overlay">
+            <h4>Zonnepanelen aansluiting</h4>
+            <p>Vrijstaande woning, Ridderkerk</p>
+          </div>
+        </div>
+
+        <div class="gallery__item fade-up">
+          <img src="images/carousel.jpg" alt="Domotica systeem" style="height: 300px; object-fit: cover;">
+          <div class="gallery__item-overlay">
+            <h4>Domotica installatie</h4>
+            <p>Villa, Barendrecht</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       9. FAQ ACCORDION
+       ======================================== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="faq__inner">
+        <div class="faq__heading fade-up">
+          <span class="label">Veelgestelde vragen</span>
+          <h2>Heeft u een vraag?</h2>
+          <p>Hieronder vindt u antwoorden op de meest gestelde vragen. Staat uw vraag er niet tussen? Neem gerust contact op.</p>
+          <a href="#contact" class="btn btn--primary">
+            <iconify-icon icon="lucide:message-circle"></iconify-icon>
+            Stel uw vraag
+          </a>
+        </div>
+
+        <div class="faq__list">
+          <div class="faq__item active">
+            <button class="faq__question">
+              Hoe snel kan een monteur bij mij zijn?
+              <span class="faq__question-icon">+</span>
+            </button>
+            <div class="faq__answer" style="max-height: 200px;">
+              <div class="faq__answer-inner">
+                Bij een storing zijn wij 24/7 bereikbaar en staat onze monteur meestal binnen 30 tot 60 minuten bij u op de stoep. Voor geplande werkzaamheden maken wij een afspraak op een moment dat u uitkomt.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question">
+              Wat kost het vervangen van een groepenkast?
+              <span class="faq__question-icon">+</span>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-inner">
+                De kosten zijn afhankelijk van het aantal groepen en de staat van uw huidige installatie. Gemiddeld ligt de prijs tussen de &euro;650 en &euro;1.500 inclusief materiaal en arbeid. Wij maken graag een vrijblijvende offerte op maat.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question">
+              Zijn jullie NEN 1010 gecertificeerd?
+              <span class="faq__question-icon">+</span>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-inner">
+                Ja, al ons werk wordt uitgevoerd conform NEN 1010 en NEN 3140. Onze monteurs zijn vakbekwaam en volgen regelmatig bijscholingen om op de hoogte te blijven van de nieuwste normen en technieken.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question">
+              Kunnen jullie ook een laadpaal installeren?
+              <span class="faq__question-icon">+</span>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-inner">
+                Zeker! Wij installeren laadpalen van alle bekende merken. We controleren eerst of uw aansluiting geschikt is en adviseren u over de beste oplossing. Vaak is de installatie binnen een dagdeel gereed.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question">
+              Werken jullie ook in de avond en het weekend?
+              <span class="faq__question-icon">+</span>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-inner">
+                Ja, voor spoedgevallen zijn wij 24/7 bereikbaar, dus ook in de avond en in het weekend. Voor reguliere werkzaamheden plannen wij bij voorkeur doordeweeks, maar in overleg is er veel mogelijk.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question">
+              Geven jullie garantie op het werk?
+              <span class="faq__question-icon">+</span>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-inner">
+                Wij geven standaard 5 jaar garantie op al onze installatiewerkzaamheden. Op gebruikte materialen geldt de fabrieksgarantie. Na oplevering ontvangt u altijd een keuringsrapport.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       10. CTA SECTION
+       ======================================== -->
+  <section class="cta" id="contact">
+    <div class="cta__bg">
+      <img src="images/cta-bg.jpg" alt="Elektricien achtergrond">
+    </div>
+    <div class="container">
+      <div class="cta__inner fade-up">
+        <span class="label" style="color: rgba(255,255,255,0.6);">Contact opnemen</span>
+        <h2>Klaar om te starten?</h2>
+        <p>Vraag vandaag nog een gratis offerte aan en ontdek wat StromSterk voor u kan betekenen. Wij reageren binnen 2 uur.</p>
+        <div class="cta__actions">
+          <a href="tel:+31101234567" class="btn btn--white">
+            <iconify-icon icon="lucide:phone"></iconify-icon>
+            010 - 123 45 67
+          </a>
+          <a href="mailto:info@stromsterk.nl" class="btn btn--outline" style="border-color: rgba(255,255,255,0.3); color: white;">
+            <iconify-icon icon="lucide:mail"></iconify-icon>
+            info@stromsterk.nl
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       11. FOOTER
+       ======================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <h3>
+            <iconify-icon icon="lucide:zap"></iconify-icon>
+            StromSterk
+          </h3>
+          <p>Uw betrouwbare elektricien in Rotterdam en omstreken. Al meer dan 15 jaar specialist in veilige en duurzame elektra-installaties.</p>
+        </div>
+
+        <div class="footer__col">
+          <h4>Diensten</h4>
+          <ul>
+            <li><a href="#diensten">Groepenkast vervangen</a></li>
+            <li><a href="#diensten">Nieuwbouw installatie</a></li>
+            <li><a href="#diensten">Storingsdienst 24/7</a></li>
+            <li><a href="#diensten">Laadpaal &amp; zonnepanelen</a></li>
+            <li><a href="#diensten">Periodieke keuring</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>Werkgebied</h4>
+          <ul>
+            <li><a href="#">Rotterdam</a></li>
+            <li><a href="#">Schiedam</a></li>
+            <li><a href="#">Capelle a/d IJssel</a></li>
+            <li><a href="#">Ridderkerk</a></li>
+            <li><a href="#">Barendrecht</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <ul>
+            <li>
+              <a href="tel:+31101234567">
+                <iconify-icon icon="lucide:phone"></iconify-icon>
+                010 - 123 45 67
+              </a>
+            </li>
+            <li>
+              <a href="mailto:info@stromsterk.nl">
+                <iconify-icon icon="lucide:mail"></iconify-icon>
+                info@stromsterk.nl
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <iconify-icon icon="lucide:map-pin"></iconify-icon>
+                Weena 505, Rotterdam
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2026 StromSterk Voorbeeld. Alle rechten voorbehouden.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook">
+            <iconify-icon icon="lucide:facebook"></iconify-icon>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <iconify-icon icon="lucide:instagram"></iconify-icon>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <iconify-icon icon="lucide:linkedin"></iconify-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- StudioLee Badge -->
+  <a href="https://studiolee.nl" target="_blank" rel="nofollow noopener" class="studiolee-badge">
+    <span class="studiolee-badge__dot"></span>
+    Speciaal gemaakt voor elektriciens door StudioLee.nl
+  </a>
+
+  <!-- ========================================
+       SCRIPTS
+       ======================================== -->
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    /* ----- Header scroll effect ----- */
+    window.addEventListener('scroll', () => {
+      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    /* ----- Mobile nav ----- */
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileNavClose = document.getElementById('mobileNavClose');
+    const mobileNavLinks = mobileNav.querySelectorAll('a');
+
+    hamburger.addEventListener('click', () => mobileNav.classList.add('active'));
+    mobileNavClose.addEventListener('click', () => mobileNav.classList.remove('active'));
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => mobileNav.classList.remove('active'));
+    });
+
+    /* ----- Fade-up observer ----- */
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+
+    /* =============================================
+       SCROLL-PIN #1: Video-Frame Scroll Animation
+       ============================================= */
+    (function() {
+      const canvas = document.getElementById('scrollCanvas');
+      const overlay = document.getElementById('scrollOverlay');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const frameCount = 121;
+      const frames = [];
+      let loadedCount = 0;
+      for (let i = 0; i < frameCount; i++) {
+        const img = new Image();
+        img.src = 'images/frames/frame-' + String(i).padStart(3, '0') + '.jpg';
+        img.onload = function() { loadedCount++; if (loadedCount === 1) { canvas.width = img.width; canvas.height = img.height; ctx.drawImage(img, 0, 0); } };
+        frames.push(img);
+      }
+      gsap.to({ frame: 0 }, {
+        frame: frameCount - 1,  ease: 'none',
+        scrollTrigger: { trigger: '.scroll-video', start: 'top top', end: '+=600%', pin: true, scrub: 0.3, anticipatePin: 1 },
+        onUpdate: function() { var idx = Math.round(this.targets()[0].frame); if (frames[idx] && frames[idx].complete) { ctx.clearRect(0, 0, canvas.width, canvas.height); ctx.drawImage(frames[idx], 0, 0); } }
+      });
+      gsap.to(overlay, { opacity: 0, scrollTrigger: { trigger: '.scroll-video', start: 'top top', end: '+=30%', scrub: true } });
+    })();
+
+    /* =============================================
+       SCROLL-PIN #2: Before/After Scale
+       ============================================= */
+    const baImageWrap = document.querySelector('.before-after__image-wrap');
+    const baText = document.querySelector('.before-after__text');
+    const baLabel = document.querySelector('.before-after__label');
+
+    const baTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.before-after',
+        start: 'top top',
+        end: 'bottom bottom',
+        pin: '.before-after__sticky',
+        scrub: true,
+        pinSpacing: false
+      }
+    });
+
+    // Phase 1: Show text, image stays small
+    baTl.fromTo(baText, {
+      opacity: 0,
+      y: 30
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 0.3,
+      ease: 'none'
+    }, 0);
+
+    // Phase 2: Scale image to full width, text fades
+    baTl.to(baText, {
+      opacity: 0,
+      duration: 0.3,
+      ease: 'none'
+    }, 0.35);
+
+    baTl.to(baImageWrap, {
+      width: '100%',
+      borderRadius: 0,
+      duration: 0.6,
+      ease: 'none'
+    }, 0.3);
+
+    // Phase 3: Show label badge
+    baTl.to(baLabel, {
+      opacity: 1,
+      duration: 0.2,
+      ease: 'none'
+    }, 0.8);
+
+    /* ----- Counter animation ----- */
+    const counters = document.querySelectorAll('.stat-item__number[data-count]');
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.getAttribute('data-count'));
+          const suffix = el.getAttribute('data-count') === '2400' ? '+' :
+                         el.getAttribute('data-count') === '15' ? '+' :
+                         el.getAttribute('data-count') === '30' ? ' min' : '%';
+          let current = 0;
+          const step = Math.ceil(target / 60);
+          const interval = setInterval(() => {
+            current += step;
+            if (current >= target) {
+              current = target;
+              clearInterval(interval);
+            }
+            el.textContent = current.toLocaleString('nl-NL') + suffix;
+          }, 25);
+          counterObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(c => counterObserver.observe(c));
+
+    /* ----- FAQ Accordion ----- */
+    document.querySelectorAll('.faq__question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const answer = item.querySelector('.faq__answer');
+        const isActive = item.classList.contains('active');
+
+        // Close all
+        document.querySelectorAll('.faq__item').forEach(i => {
+          i.classList.remove('active');
+          i.querySelector('.faq__answer').style.maxHeight = null;
+        });
+
+        // Open clicked (if was closed)
+        if (!isActive) {
+          item.classList.add('active');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
+
+    /* ----- Smooth scroll for anchor links ----- */
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+
+    // Before/After slider
+    (function() {
+      var before = document.getElementById('baBefore');
+      var label = document.getElementById('baLabel');
+      if (!before || typeof gsap === 'undefined') return;
+      gsap.registerPlugin(ScrollTrigger);
+      var tl = gsap.timeline({
+        scrollTrigger: { trigger: '.ba-section', start: 'top top', end: '+=200%', pin: true, scrub: 0.5, anticipatePin: 1 }
+      });
+      tl.fromTo(before, { clipPath: 'inset(0 0 0 0)' }, { clipPath: 'inset(0 100% 0 0)', duration: 1, ease: 'none' });
+      tl.fromTo(label, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 0.5);
+    })();
+
+</body>
+</html>
